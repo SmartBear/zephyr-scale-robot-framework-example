@@ -7,6 +7,13 @@ User can clear the display
     Press clear 
     Display should be empty
 
+*** Test Cases ***
+User can calculate with wrong result
+    Input number    1
+    Press operator    +
+    Input number    1
+    Press enter 
+    Result should be     3
 
 *** Test Cases ***
 User can calculate two numbers
