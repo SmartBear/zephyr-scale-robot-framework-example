@@ -15,7 +15,6 @@ This will execute `mytest.robot` test file and generate the JUnit result file `j
 
 ### Naming conventions
 
-
 There are 2 ways to match Robot Framework test cases with Zephyr Scale test cases:
 - **By Zephyr Scale test case key**: in case your Robot framework test case contains the Zephyr Scale test case key
 - **By Zephyr Scale test case name**: if your Robot Framework test case doesn't contain some Zephyr Scale test case key, then it will try to match Zephyr Scale test case by name following the pattern `<robot filename with no extension>.<robot test case name>` 
