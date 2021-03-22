@@ -8,7 +8,7 @@ No configuration is required beforehand. Check the section below to see how to e
 
 ## Executing tests and uploading results to Zephyr Scale
 
-In order to instruct Robot Framework to generate the JUnit XML results file, all that is require is to execute the tests with `-x` parameter followed by the xml file name. Here is an example:
+In order to instruct Robot Framework to generate the JUnit XML results file, all that is required is to execute the tests with `-x` parameter followed by the xml file name. Here is an example:
 
 ```
 robot -x junitresult.xml mytest.robot
