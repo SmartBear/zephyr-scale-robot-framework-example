@@ -1,23 +1,28 @@
-# Example of how to use Robot Framework to generate JUnit result file
+# Zephyr Scale and Robot Framework integration
 
-Small project to show how to make Robot Framework to generate the JUnit result file that you can [`POST /automations/executions/junit`](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#operation/createJUnitExecutions)
+This is an example project that demonstrates how to configure Robot Framework to generate the JUnit XML results file required for uploading test results to Zephyr Scale using the API [`POST /automations/executions/junit`](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#operation/createJUnitExecutions).
 
-### Configuration
+## Configuration
 
-You just have to execute Robot Framework with `-x` parameter followed by the xml result file name to instruct it to generate the JUnit result file. Here is an example:
+No configuration is required beforehand. Check the section below to see how to execute tests and upload the test results to Zephyr Scale.
+
+## Executing tests and uploading results to Zephyr Scale
+
+In order to instruct Robot Framework to generate the JUnit XML results file, all that is require is to execute the tests with `-x` parameter followed by the xml file name. Here is an example:
 
 ```
 robot -x junitresult.xml mytest.robot
 ```
 
-This will execute `mytest.robot` test file and generate the JUnit result file `junitresult.xml` that you'll [`POST /automations/executions/junit`](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#operation/createJUnitExecutions).
+The command line above will execute the `mytest.robot` test file and generate the JUnit XML results file `junitresult.xml`. Then, this file containing the test results can be uploaded to Zephyr Scale using the following API endpoint: [`POST /automations/executions/junit`](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#operation/createJUnitExecutions).
 
+The abovementioned API accepts either a single XML file as well as a .zip file containing multiple XML files. The POST request will create a new test cycle in Zephyr Scale containing the results and will respond with the key of the created test cycle.
 
-### Naming conventions
+## Naming conventions
 
-There are 2 ways to match Robot Framework test cases with Zephyr Scale test cases:
-- **By Zephyr Scale test case key**: in case your Robot framework test case contains the Zephyr Scale test case key
-- **By Zephyr Scale test case name**: if your Robot Framework test case doesn't contain some Zephyr Scale test case key, then it will try to match Zephyr Scale test case by name following the pattern `<robot filename with no extension>.<robot test case name>` 
+There are 2 ways to link Robot Framework test cases with Zephyr Scale test cases:
+- **Zephyr Scale test case key**: in case your Robot framework test case contains the Zephyr Scale test case key
+- **Zephyr Scale test case name**: if your Robot Framework test case doesn't contain some Zephyr Scale test case key, then it will try to match Zephyr Scale test case by name using the following pattern `<robot filename with no extension>.<robot test case name>`
 
 Here is an example. Consider a file named `calculator.robot`:
 ```robotframework
@@ -50,9 +55,9 @@ User can calculate two numbers - NET-T1744
 ```
 As we can see, the first Robot Framework test cases will match Zephyr Scale test cases by name and the last 2 will match by key.
 
-### Requirements to run this example project
+## Requirements to run this example project
 
-In order to execute this example on your local machine you’ll have to checkout this repository and install python 3. Here is how you can do it on mac:
+In order to execute this example on your local machine you will have to checkout this repository and install python 3:
 
 ```
 brew upgrade pyenv
@@ -62,15 +67,13 @@ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-Now you have to install robot framework and docutils library:
+Now, install Robot Framework and docutils library:
 
 ```
 pip install robotframework
 pip install docutils
 ```
 
-You can now make Robot Framework to generate the JUnit result file by executing the following command:
+## More information
 
-```
-robot -x junitresult.xml calculator.robot
-```
+For more information, please head to our [documentation page](https://support.smartbear.com/zephyr-scale) or get in [touch with us](https://smartbear.atlassian.net/servicedesk/) if you have any issues or need help.
