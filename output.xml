@@ -1,609 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.8.13 on darwin)" generated="20230309 14:56:19.727" rpa="false" schemaversion="3">
-<suite id="s1" name="Tests" source="/Users/victor.martinez/workspace/zephyr-scale-robot-framework-example/tests">
-<suite id="s1-s1" name="Calculator" source="/Users/victor.martinez/workspace/zephyr-scale-robot-framework-example/tests/calculator.robot">
-<kw name="Clear Calculator" type="SETUP">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.756" endtime="20230309 14:56:19.757"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.756" endtime="20230309 14:56:19.757"/>
-</kw>
-<test id="s1-s1-t1" name="User can clear the display" line="4">
-<kw name="Input Number" library="Calculator">
-<arg>10</arg>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<kw name="Press clear">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<kw name="Display Should Be Empty" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.757"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.758"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.757" endtime="20230309 14:56:19.758"/>
-</test>
-<test id="s1-s1-t2" name="VIC-T9 User can calculate with wrong result" line="13">
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.758"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>3</arg>
-<msg timestamp="20230309 14:56:19.758" level="FAIL">Expected result to be '3' but was '2'.</msg>
-<status status="FAIL" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.764"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.765" endtime="20230309 14:56:19.765"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.765" endtime="20230309 14:56:19.765"/>
-</kw>
-<status status="FAIL" starttime="20230309 14:56:19.758" endtime="20230309 14:56:19.765">Expected result to be '3' but was '2'.</status>
-</test>
-<test id="s1-s1-t3" name="User can calculate two numbers - VIC-T9" line="22">
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>+</arg>
-<arg>5</arg>
-<arg>15</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.765" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.765" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>-</arg>
-<arg>5</arg>
-<arg>5</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.766"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.766" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>/</arg>
-<arg>5</arg>
-<arg>2</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.767"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.768"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.767" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>*</arg>
-<arg>5</arg>
-<arg>50</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.768" endtime="20230309 14:56:19.768"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.769" endtime="20230309 14:56:19.769"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.769" endtime="20230309 14:56:19.769"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.765" endtime="20230309 14:56:19.769"/>
-</test>
-<status status="FAIL" starttime="20230309 14:56:19.754" endtime="20230309 14:56:19.769"/>
-</suite>
-<suite id="s1-s2" name="Calculator2" source="/Users/victor.martinez/workspace/zephyr-scale-robot-framework-example/tests/calculator2.robot">
-<kw name="Clear Calculator" type="SETUP">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.770" endtime="20230309 14:56:19.771"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.770" endtime="20230309 14:56:19.771"/>
-</kw>
-<test id="s1-s2-t1" name="User can clear the display" line="4">
-<kw name="Input Number" library="Calculator">
-<arg>10</arg>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<kw name="Press clear">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<kw name="Display Should Be Empty" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.771"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.772"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.771" endtime="20230309 14:56:19.772"/>
-</test>
-<test id="s1-s2-t2" name="VIC-T9 User can calculate with wrong result" line="13">
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>3</arg>
-<msg timestamp="20230309 14:56:19.772" level="FAIL">Expected result to be '3' but was '2'.</msg>
-<status status="FAIL" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.772"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.773"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.773"/>
-</kw>
-<status status="FAIL" starttime="20230309 14:56:19.772" endtime="20230309 14:56:19.773">Expected result to be '3' but was '2'.</status>
-</test>
-<test id="s1-s2-t3" name="User can calculate two numbers - VIC-T9" line="22">
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>+</arg>
-<arg>5</arg>
-<arg>15</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.773"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.773"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.773"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>-</arg>
-<arg>5</arg>
-<arg>5</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.774"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.775"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.774" endtime="20230309 14:56:19.775"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>/</arg>
-<arg>5</arg>
-<arg>2</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.775"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.775"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.775"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.776"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.775" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>*</arg>
-<arg>5</arg>
-<arg>50</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.776"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.777"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.776" endtime="20230309 14:56:19.777"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.777" endtime="20230309 14:56:19.777"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.777" endtime="20230309 14:56:19.777"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.773" endtime="20230309 14:56:19.777"/>
-</test>
-<status status="FAIL" starttime="20230309 14:56:19.769" endtime="20230309 14:56:19.777"/>
-</suite>
-<suite id="s1-s3" name="Calculator3" source="/Users/victor.martinez/workspace/zephyr-scale-robot-framework-example/tests/calculator3.robot">
-<kw name="Clear Calculator" type="SETUP">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.778" endtime="20230309 14:56:19.778"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.778" endtime="20230309 14:56:19.778"/>
-</kw>
-<test id="s1-s3-t1" name="User can clear the display" line="4">
-<kw name="Input Number" library="Calculator">
-<arg>10</arg>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<kw name="Press clear">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<kw name="Display Should Be Empty" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.779"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.780"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.780"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.779" endtime="20230309 14:56:19.780"/>
-</test>
-<test id="s1-s3-t2" name="VIC-T9 User can calculate with wrong result" line="13">
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.780"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>+</arg>
-<status status="PASS" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.780"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>1</arg>
-<status status="PASS" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.780"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.781"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.781"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>3</arg>
-<msg timestamp="20230309 14:56:19.781" level="FAIL">Expected result to be '3' but was '2'.</msg>
-<status status="FAIL" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.781"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.781"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.781"/>
-</kw>
-<status status="FAIL" starttime="20230309 14:56:19.780" endtime="20230309 14:56:19.781">Expected result to be '3' but was '2'.</status>
-</test>
-<test id="s1-s3-t3" name="User can calculate two numbers - VIC-T9" line="22">
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>+</arg>
-<arg>5</arg>
-<arg>15</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.782"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.782"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>-</arg>
-<arg>5</arg>
-<arg>5</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.783"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.782" endtime="20230309 14:56:19.783"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>/</arg>
-<arg>5</arg>
-<arg>2</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.784"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.784"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.784"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.784"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.784"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.784"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.783" endtime="20230309 14:56:19.784"/>
-</kw>
-<kw name="Calculate two numbers should pass">
-<arg>10</arg>
-<arg>*</arg>
-<arg>5</arg>
-<arg>50</arg>
-<kw name="Input Number" library="Calculator">
-<arg>${number1}</arg>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.785"/>
-</kw>
-<kw name="Press Operator" library="Calculator">
-<arg>${operator}</arg>
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<kw name="Input Number" library="Calculator">
-<arg>${number2}</arg>
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<kw name="Press enter">
-<kw name="Calculate" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<kw name="Result Should Be" library="Calculator">
-<arg>${result}</arg>
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.784" endtime="20230309 14:56:19.785"/>
-</kw>
-<kw name="Clear Calculator" type="TEARDOWN">
-<kw name="Clear" library="Calculator">
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.785" endtime="20230309 14:56:19.785"/>
-</kw>
-<status status="PASS" starttime="20230309 14:56:19.781" endtime="20230309 14:56:19.785"/>
-</test>
-<status status="FAIL" starttime="20230309 14:56:19.777" endtime="20230309 14:56:19.786"/>
-</suite>
-<status status="FAIL" starttime="20230309 14:56:19.734" endtime="20230309 14:56:19.786"/>
-</suite>
-<statistics>
-<total>
-<stat pass="6" fail="3" skip="0">All Tests</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat pass="6" fail="3" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s1" name="Calculator">Tests.Calculator</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s2" name="Calculator2">Tests.Calculator2</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s3" name="Calculator3">Tests.Calculator3</stat>
-</suite>
-</statistics>
-<errors>
-</errors>
+<robot generator="Robot 3.2.2 (Python 3.6.0 on darwin)" generated="20210305 18:42:01.669" rpa="false">
+   <suite id="s1" name="Calculator" source="/Users/otaviomedeiros/SmartBear/Projects/zephyr-scale-robot-framework-example/calculator.robot">
+      <kw name="Clear Calculator" type="setup">
+         <kw name="Clear" library="Calculator">
+            <status status="PASS" starttime="20210305 18:42:01.697" endtime="20210305 18:42:01.697" />
+         </kw>
+         <status status="PASS" starttime="20210305 18:42:01.697" endtime="20210305 18:42:01.697" />
+      </kw>
+      <test id="s1-t1" name="User can clear the display">
+         <kw name="Input Number" library="Calculator">
+            <arguments>
+               <arg>10</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.698" endtime="20210305 18:42:01.698" />
+         </kw>
+         <kw name="Press Operator" library="Calculator">
+            <arguments>
+               <arg>+</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.698" endtime="20210305 18:42:01.698" />
+         </kw>
+         <kw name="Input Number" library="Calculator">
+            <arguments>
+               <arg>1</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.698" endtime="20210305 18:42:01.698" />
+         </kw>
+         <kw name="Press clear">
+            <kw name="Clear" library="Calculator">
+               <status status="PASS" starttime="20210305 18:42:01.699" endtime="20210305 18:42:01.699" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.698" endtime="20210305 18:42:01.699" />
+         </kw>
+         <kw name="Display Should Be Empty" library="Calculator">
+            <status status="PASS" starttime="20210305 18:42:01.699" endtime="20210305 18:42:01.699" />
+         </kw>
+         <kw name="Clear Calculator" type="teardown">
+            <kw name="Clear" library="Calculator">
+               <status status="PASS" starttime="20210305 18:42:01.700" endtime="20210305 18:42:01.700" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.699" endtime="20210305 18:42:01.700" />
+         </kw>
+         <status status="PASS" starttime="20210305 18:42:01.697" endtime="20210305 18:42:01.700" critical="yes" />
+      </test>
+      <test id="s1-t2" name="NET-T1744 User can calculate with wrong result">
+         <kw name="Input Number" library="Calculator">
+            <arguments>
+               <arg>1</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.700" endtime="20210305 18:42:01.701" />
+         </kw>
+         <kw name="Press Operator" library="Calculator">
+            <arguments>
+               <arg>+</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.701" endtime="20210305 18:42:01.701" />
+         </kw>
+         <kw name="Input Number" library="Calculator">
+            <arguments>
+               <arg>1</arg>
+            </arguments>
+            <status status="PASS" starttime="20210305 18:42:01.701" endtime="20210305 18:42:01.701" />
+         </kw>
+         <kw name="Press enter">
+            <kw name="Calculate" library="Calculator">
+               <status status="PASS" starttime="20210305 18:42:01.701" endtime="20210305 18:42:01.701" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.701" endtime="20210305 18:42:01.702" />
+         </kw>
+         <kw name="Result Should Be" library="Calculator">
+            <arguments>
+               <arg>3</arg>
+            </arguments>
+            <msg timestamp="20210305 18:42:01.702" level="FAIL">Expected result to be '3' but was '2'.</msg>
+            <status status="FAIL" starttime="20210305 18:42:01.702" endtime="20210305 18:42:01.702" />
+         </kw>
+         <kw name="Clear Calculator" type="teardown">
+            <kw name="Clear" library="Calculator">
+               <status status="PASS" starttime="20210305 18:42:01.703" endtime="20210305 18:42:01.703" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.703" endtime="20210305 18:42:01.703" />
+         </kw>
+         <status status="FAIL" starttime="20210305 18:42:01.700" endtime="20210305 18:42:01.703" critical="yes">Expected result to be '3' but was '2'.</status>
+      </test>
+      <test id="s1-t3" name="User can calculate two numbers - NET-T1744">
+         <kw name="Calculate two numbers should pass">
+            <arguments>
+               <arg>10</arg>
+               <arg>+</arg>
+               <arg>5</arg>
+               <arg>15</arg>
+            </arguments>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number1}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.704" endtime="20210305 18:42:01.705" />
+            </kw>
+            <kw name="Press Operator" library="Calculator">
+               <arguments>
+                  <arg>${operator}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.705" endtime="20210305 18:42:01.705" />
+            </kw>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number2}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.705" endtime="20210305 18:42:01.705" />
+            </kw>
+            <kw name="Press enter">
+               <kw name="Calculate" library="Calculator">
+                  <status status="PASS" starttime="20210305 18:42:01.705" endtime="20210305 18:42:01.705" />
+               </kw>
+               <status status="PASS" starttime="20210305 18:42:01.705" endtime="20210305 18:42:01.706" />
+            </kw>
+            <kw name="Result Should Be" library="Calculator">
+               <arguments>
+                  <arg>${result}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.706" endtime="20210305 18:42:01.706" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.704" endtime="20210305 18:42:01.706" />
+         </kw>
+         <kw name="Calculate two numbers should pass">
+            <arguments>
+               <arg>10</arg>
+               <arg>-</arg>
+               <arg>5</arg>
+               <arg>5</arg>
+            </arguments>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number1}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.706" endtime="20210305 18:42:01.707" />
+            </kw>
+            <kw name="Press Operator" library="Calculator">
+               <arguments>
+                  <arg>${operator}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.707" endtime="20210305 18:42:01.707" />
+            </kw>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number2}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.707" endtime="20210305 18:42:01.707" />
+            </kw>
+            <kw name="Press enter">
+               <kw name="Calculate" library="Calculator">
+                  <status status="PASS" starttime="20210305 18:42:01.707" endtime="20210305 18:42:01.707" />
+               </kw>
+               <status status="PASS" starttime="20210305 18:42:01.707" endtime="20210305 18:42:01.708" />
+            </kw>
+            <kw name="Result Should Be" library="Calculator">
+               <arguments>
+                  <arg>${result}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.708" endtime="20210305 18:42:01.708" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.706" endtime="20210305 18:42:01.708" />
+         </kw>
+         <kw name="Calculate two numbers should pass">
+            <arguments>
+               <arg>10</arg>
+               <arg>/</arg>
+               <arg>5</arg>
+               <arg>2</arg>
+            </arguments>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number1}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.708" endtime="20210305 18:42:01.709" />
+            </kw>
+            <kw name="Press Operator" library="Calculator">
+               <arguments>
+                  <arg>${operator}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.709" endtime="20210305 18:42:01.709" />
+            </kw>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number2}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.709" endtime="20210305 18:42:01.709" />
+            </kw>
+            <kw name="Press enter">
+               <kw name="Calculate" library="Calculator">
+                  <status status="PASS" starttime="20210305 18:42:01.709" endtime="20210305 18:42:01.709" />
+               </kw>
+               <status status="PASS" starttime="20210305 18:42:01.709" endtime="20210305 18:42:01.710" />
+            </kw>
+            <kw name="Result Should Be" library="Calculator">
+               <arguments>
+                  <arg>${result}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.710" endtime="20210305 18:42:01.710" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.708" endtime="20210305 18:42:01.710" />
+         </kw>
+         <kw name="Calculate two numbers should pass">
+            <arguments>
+               <arg>10</arg>
+               <arg>*</arg>
+               <arg>5</arg>
+               <arg>50</arg>
+            </arguments>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number1}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.710" endtime="20210305 18:42:01.711" />
+            </kw>
+            <kw name="Press Operator" library="Calculator">
+               <arguments>
+                  <arg>${operator}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.711" endtime="20210305 18:42:01.711" />
+            </kw>
+            <kw name="Input Number" library="Calculator">
+               <arguments>
+                  <arg>${number2}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.711" endtime="20210305 18:42:01.711" />
+            </kw>
+            <kw name="Press enter">
+               <kw name="Calculate" library="Calculator">
+                  <status status="PASS" starttime="20210305 18:42:01.711" endtime="20210305 18:42:01.712" />
+               </kw>
+               <status status="PASS" starttime="20210305 18:42:01.711" endtime="20210305 18:42:01.712" />
+            </kw>
+            <kw name="Result Should Be" library="Calculator">
+               <arguments>
+                  <arg>${result}</arg>
+               </arguments>
+               <status status="PASS" starttime="20210305 18:42:01.712" endtime="20210305 18:42:01.712" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.710" endtime="20210305 18:42:01.712" />
+         </kw>
+         <kw name="Clear Calculator" type="teardown">
+            <kw name="Clear" library="Calculator">
+               <status status="PASS" starttime="20210305 18:42:01.712" endtime="20210305 18:42:01.713" />
+            </kw>
+            <status status="PASS" starttime="20210305 18:42:01.712" endtime="20210305 18:42:01.713" />
+         </kw>
+         <status status="PASS" starttime="20210305 18:42:01.704" endtime="20210305 18:42:01.713" critical="yes" />
+      </test>
+      <status status="FAIL" starttime="20210305 18:42:01.671" endtime="20210305 18:42:01.713" />
+   </suite>
+   <statistics>
+      <total>
+         <stat pass="2" fail="1">Critical Tests</stat>
+         <stat pass="2" fail="1">All Tests</stat>
+      </total>
+      <tag />
+      <suite>
+         <stat pass="2" fail="1" id="s1" name="Calculator">Calculator</stat>
+      </suite>
+   </statistics>
+   <errors />
 </robot>
