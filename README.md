@@ -40,14 +40,18 @@ To generate files with multiple test suites at the same time, Zephyr Scale suppo
 ```
 
 There is already a Robot Framework's XUnit Output Modifier (xom) https://github.com/rikerfi/robotframework-xunitmodifier
-To use it, one of the options is to copy the file xom.py in the directory you are running your scripts.
+To use it, one of the options is to download the file xom.py in the directory you are running your scripts:
+```
+brew install wget
+wget https://github.com/rikerfi/robotframework-xunitmodifier/raw/main/xom.py
+```
 Edit the content of xom.py file by changing `ROOT_NODE_PLURAL` to:
 ```
 ROOT_NODE_PLURAL = True
 ```
 and if you want to run all robot frameworks inside your folder tests then you can run the following command:
 ```
-robot --pythonpath . --prerebotmodifier xom.XUnitOut:xunit.xml tests
+robot --pythonpath . --prerebotmodifier xom.XUnitOut:multipleTestSuiteInTestSuitesUnit.xml tests
 ```
 This command generates xunit.xml file compatible with Zephyr Scale.
 ## Naming conventions
