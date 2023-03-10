@@ -16,8 +16,43 @@ robot -x junitresult.xml mytest.robot
 
 The command line above will execute the `mytest.robot` test file and generate the JUnit XML results file `junitresult.xml`. Then, this file containing the test results can be uploaded to Zephyr Scale using the following API endpoint: [`POST /automations/executions/junit`](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#operation/createJUnitExecutions).
 
-The abovementioned API accepts either a single XML file as well as a .zip file containing multiple XML files. The POST request will create a new test cycle in Zephyr Scale containing the results and will respond with the key of the created test cycle.
+The above mentioned API accepts either a single XML file as well as a .zip file containing multiple XML files. The POST request will create a new test cycle in Zephyr Scale containing the results and will respond with the key of the created test cycle.
 
+### One file containing multiple test-suites
+
+Zephyr Scale supports XML files with multiple `testsuite` tags. However, some versions of RobotFramework generate them in a way Zephyr Scale does not recognize, as in this example:
+```
+<testsuite>
+    <testsuite>
+    ....
+    </testsuite>
+</testsuite>
+```
+
+To generate files with multiple test suites at the same time, Zephyr Scale supports the following structure:
+```
+<testsuites>
+    <testsuite>
+    ....
+    </testsuite>
+</testsuites>
+```
+
+There is already a Robot Framework's XUnit Output Modifier (xom) https://github.com/rikerfi/robotframework-xunitmodifier
+To use it, one of the options is to download the file xom.py in the directory you are running your scripts:
+```
+brew install wget
+wget https://github.com/rikerfi/robotframework-xunitmodifier/raw/main/xom.py
+```
+Edit the content of xom.py file by changing `ROOT_NODE_PLURAL` to:
+```
+ROOT_NODE_PLURAL = True
+```
+and if you want to run all Robot Framework tests inside a folder called `tests`, you can run the following command:
+```
+robot --pythonpath . --prerebotmodifier xom.XUnitOut:multipleTestSuiteInTestSuitesUnit.xml tests
+```
+This command generates xunit.xml file compatible with Zephyr Scale.
 ## Naming conventions
 
 There are 2 ways to link Robot Framework test cases with Zephyr Scale test cases:
@@ -61,8 +96,8 @@ In order to execute this example on your local machine you will have to checkout
 
 ```
 brew upgrade pyenv
-pyenv install 3.6.0
-pyenv global 3.6.0
+pyenv install 3.8.13
+pyenv global 3.8.13
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 source ~/.zshrc
 ```
