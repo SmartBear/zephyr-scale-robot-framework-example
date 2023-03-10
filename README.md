@@ -20,8 +20,7 @@ The above mentioned API accepts either a single XML file as well as a .zip file 
 
 ### One file containing multiple test-suites
 
-Zephyr Scale does support having more than one testsuite in the same xml file, but RobotFramework is generating them 
-in a way Zephyr Scale is not supporting:
+Zephyr Scale supports XML files with multiple `testsuite` tags. However, some versions of RobotFramework generate them in a way Zephyr Scale does not recognize, as in this example:
 ```
 <testsuite>
     <testsuite>
@@ -49,7 +48,7 @@ Edit the content of xom.py file by changing `ROOT_NODE_PLURAL` to:
 ```
 ROOT_NODE_PLURAL = True
 ```
-and if you want to run all robot frameworks inside your folder tests then you can run the following command:
+and if you want to run all Robot Framework tests inside a folder called `tests`, you can run the following command:
 ```
 robot --pythonpath . --prerebotmodifier xom.XUnitOut:multipleTestSuiteInTestSuitesUnit.xml tests
 ```
